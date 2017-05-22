@@ -16,6 +16,12 @@ node *makenode(int data){
 	return temp;
 	}
 
+void die(node **root){
+	if(*root==NULL)return;
+	die(&( (*root)->next ));
+	free(*root);
+	}
+
 void printList(node *root){
 	root = root->next;
 	printf("\nPrinting Updated List : ");
@@ -111,6 +117,7 @@ int main(){
 		printf("Wrong choice see you in heaven.");
 	}
 	printList(root);
+	die(&root);
 	printf("\n\n**********************************THE END**********************************");
 	return 0;
 	}
