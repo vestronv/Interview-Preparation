@@ -21,7 +21,8 @@ node *makenode(int data){
 
 void die(node **root){
 	if(*root==NULL)return;
-	//die(&( (*root)->right ));
+	die(&( (*root)->right ));
+	die(&( (*root)->down ));
 	free(*root);
 	}
 
@@ -68,6 +69,8 @@ int main(){
 	root->right->right->right->down = makenode(35);
 	root->right->right->right->down->down = makenode(40);
 	root->right->right->right->down->down->down = makenode(45);
+	printf("\nOrigin List : ");
+	printList(root);
 	printf("\nFlattened List is : ");
 	printList(flatten(root));
 	die(&root);
