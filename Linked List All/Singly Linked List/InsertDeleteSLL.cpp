@@ -3,6 +3,8 @@ Description : Insertion and Deletion from a Singly linked list.
 **/
 
 #include <bits/stdc++.h>
+#include <sys/socket.h>
+#include <netinet/in.h>//wow
 using namespace std;
 
 struct node{
@@ -121,3 +123,4 @@ int main(){
 	printf("\n\n**********************************THE END**********************************");
 	return 0;
 	}
+

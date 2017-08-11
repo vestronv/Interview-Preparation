@@ -14,12 +14,13 @@ int main(){
 		cin>>n>>k;
 		sz=k;
 		map<int,int>m;
+		vector<pair<int,int> >vp;
 		for(i=0; i<n; i++){
 			cin>>ele;
 			freq[ele]++;
-			m[ele]++;
-			vector<int> v(m.size());
-			transform(m.begin(), m.end(),v.begin(),get_second);
+			if(vp.find(ele)==vp.end()){
+				vp.insert(ele)
+				}
 			if(i<k){
 				for(map<int,int>::iterator mit=m.)
 				}

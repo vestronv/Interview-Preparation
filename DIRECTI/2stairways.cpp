@@ -6,6 +6,7 @@ Each step has some amount of penalty associated and if you use that
 step you will be penalized by the same amount. After taking few steps 
 you will accumulate penalty of all of the steps you visited.
 */
+/*
 #include <bits/stdc++.h>
 using namespace std;
 #define inf 99999
@@ -31,6 +32,41 @@ int main(){
 			}
 			}
 		cout<<min(dp[n][0], dp[n][1])<<endl;
+		}
+	return 0;
+	}
+*/
+
+#include <bits/stdc++.h>
+using namespace std;
+const int N = 100005;
+bool solve(int a, int b){
+	//cout<<a<<" "<<b<<" ";
+	//int p;
+	//cin>>p;
+	if(a < 1 || b < 1)return false;
+	if(a==1 && b==1)return true;
+	int i=2;
+	while(i){
+		if((a/(i*i)) >= 1 || (b/(i*i)) >= 1 ){
+			if(((a % (i*i)) == 0 || (b % (i*i)) == 0 )){
+				if(solve(a/(i*i), b/i) || solve(a/i, b/(i*i)))
+					return true;
+				}
+			}
+		else break;
+		i++;
+		}
+	return false;
+	}
+int main(){
+	int t;
+	scanf("%d",&t);
+	while(t--){
+		int a,b;
+		cin>>a>>b;
+		if(solve(a,b))cout<<"Yes\n";
+		else cout<<"No\n";
 		}
 	return 0;
 	}
